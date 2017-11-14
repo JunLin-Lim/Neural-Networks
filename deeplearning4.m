@@ -1,5 +1,10 @@
 function [N1, B1] = deeplearning4(img,label)
 
+img = loadMNISTImages('train-images.idx3-ubyte');
+label = loadMNISTLabels('train-labels.idx1-ubyte');
+testimg = loadMNISTImages('t10k-images.idx3-ubyte');
+testlabel = loadMNISTLabels('t10k-labels.idx1-ubyte');
+
 img = img';
 testratio = 0.1; % percentage test data
 testimg = img(1:1/testratio:numel(label),:);
